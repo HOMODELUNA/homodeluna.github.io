@@ -27,8 +27,8 @@ email: via-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Domo de LunatikLandano, blogo kaj artikoj pro iu ke ŝatas programi kaj racii
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/base" # the subpath of your site, e.g. /blog
+url: "https://homodeluna.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Nil
 github_username:  homodeluna
 
@@ -36,7 +36,7 @@ github_username:  homodeluna
 theme: minima
 plugins:
   - jekyll-feed
-
+destination: frontsite
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
