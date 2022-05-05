@@ -33,4 +33,9 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem 'webrick'
+
+gem 'minimal'
+
+gem 'actionpack'
+#gem "github-pages", group: :jekyll_plugins
 # gem 'wdm', '>= 0.1.0' if Gem.win_platform?

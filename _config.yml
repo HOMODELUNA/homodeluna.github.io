@@ -27,15 +27,17 @@ email: via-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Domo de LunatikLandano, blogo kaj artikoj pro iu ke ŝatas programi kaj racii
 
-baseurl: "/docs" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://homodeluna.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Nil
 github_username:  homodeluna
 
 # Build settings
 theme: minima
+#remote_theme: pages-themes/cayman@v0.2.0
 plugins:
-  - jekyll-feed
+#- jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-feed
 destination: docs
 # Exclude from processing.
 # The following items will not be processed, by default.
