@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "haskell 入门"
+date:   2022-08-23 2:43:00 +0800
+categories: language haskell
+---
+> 本品不能替代教程
+> 基础的教程,软件下载等,去[官网](https://www.haskell.org/)
+
+# Haskell 入门
+
+- 函数运算的优先级最高 , 因此如果函数的参数如果是中缀运算出来的,那么要加括号
+```haskell
+abs dx - dy   -- => (abs dx) - dy
+abs (dx - dy) -- => abs (dx - dy)
+```
+
+一个函数定义像是这个样子:
+```haskell
+horseStep :: (Int,Int)-> (Int,Int) -> Bool
+```
+`::`左边是函数名,右边是函数的各个参数,这个函数接受两个`(Int,Int)` 型参数,返回一个`Bool`.
+
+为什么会这么写? 因为如果你只向他输入一个参数 那么剩下的部分就是一个`(Int,Int)->Bool`型的函数.
+
+

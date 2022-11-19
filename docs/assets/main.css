@@ -43,7 +43,7 @@ blockquote { color: #828282; border-left: 4px solid #e8e8e8; padding-left: 15px;
 blockquote > :last-child { margin-bottom: 0; }
 
 /** Code formatting */
-pre, code { font-size: 15px; border: 1px solid #e8e8e8; border-radius: 3px; background-color: #eef; }
+pre, code { font-size: 15px; border: 1px solid #e8e8e8; border-radius: 3px; background-color: #eef; font-family: 'Courier New', Courier, monospace; }
 
 code { padding: 1px 5px; }
 
@@ -156,7 +156,7 @@ table td { border: 1px solid #e8e8e8; }
 
 .highlighter-rouge .highlight { background: #eef; }
 
-.highlight .c { color: #998; font-style: italic; }
+.highlight .c { color: #009a6f; font-style: italic; }
 
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
 
@@ -164,13 +164,13 @@ table td { border: 1px solid #e8e8e8; }
 
 .highlight .o { font-weight: bold; }
 
-.highlight .cm { color: #998; font-style: italic; }
+.highlight .cm { color: #009a6f; font-style: italic; }
 
-.highlight .cp { color: #999; font-weight: bold; }
+.highlight .cp { color: #009a6f; font-weight: bold; }
 
-.highlight .c1 { color: #998; font-style: italic; }
+.highlight .c1 { color: #009a6f; font-style: italic; }
 
-.highlight .cs { color: #999; font-weight: bold; font-style: italic; }
+.highlight .cs { color: #369a00; font-weight: bold; font-style: italic; }
 
 .highlight .gd { color: #000; background-color: #fdd; }
 
@@ -222,9 +222,9 @@ table td { border: 1px solid #e8e8e8; }
 
 .highlight .ne { color: #900; font-weight: bold; }
 
-.highlight .nf { color: #900; font-weight: bold; }
+.highlight .nf { color: #8e7900; font-weight: bold; }
 
-.highlight .nn { color: #555; }
+.highlight .nn { color: #00823c; }
 
 .highlight .nt { color: #000080; }
 
