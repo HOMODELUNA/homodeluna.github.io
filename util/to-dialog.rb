@@ -209,7 +209,8 @@ en_side(dialog).each do |(sp,dir)|
   when :left
     puts "> #{sp.name}\n\n"
   when :right
-    puts "> <div style=\"float: right\">#{sp.name}</div>\n\n"
+    puts "> #{sp.name}\n\n"
+    #puts "> <div style=\"float: right\">#{sp.name}</div>\n\n"
   end
   sp.lines.each{puts _1;puts ""}
 end
