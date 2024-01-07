@@ -39,3 +39,9 @@ gem 'minimal'
 gem 'actionpack'
 #gem "github-pages", group: :jekyll_plugins
 # gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+group :math_engine do
+  gem "kramdown-math-sskatex"
+  gem "execjs"
+  gem "duktape"
+end

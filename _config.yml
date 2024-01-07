@@ -60,3 +60,8 @@ destination: _site
 #   - vendor/ruby/
 exclude:
   - util/
+
+kramdown:
+  math_engine: sskatex
+  math_engine_opts: 
+    katex_js: './assets/js/katex.min.js'
