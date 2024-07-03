@@ -1,0 +1,23 @@
+@startuml
+
+component "tuple<int,double,std::string>"
+() "_Tuple_impl<0,int,double,std::string>" 
+
+component "_Head_base<0,int>" 
+
+"_Tuple_impl<0,int,double,std::string>" --> "_Head_base<0,int>" 
+
+() "_Tuple_impl<1,double,std::string>"
+"_Tuple_impl<0,int,double,std::string>" --> "_Tuple_impl<1,double,std::string>" 
+
+component "_Head_base<1,double>"
+"_Tuple_impl<1,double,std::string>" --> "_Head_base<1,double>" 
+
+() "_Tuple_impl<2,std::string>"
+"_Tuple_impl<1,double,std::string>" --> "_Tuple_impl<2,std::string>" 
+
+component "_Head_base<2,std::string>"
+"_Tuple_impl<2,std::string>" --> "_Head_base<2,std::string>" 
+
+"tuple<int,double,std::string>" --> "_Tuple_impl<0,int,double,std::string>" 
+@enduml
