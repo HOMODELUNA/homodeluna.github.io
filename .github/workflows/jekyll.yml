@@ -29,20 +29,26 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    # Pinned explicitly: `ubuntu-latest` is a moving target
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
-        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        # v1.336.0 (2026-10-30) — runs on node24 and knows the ubuntu-26.04
+        # hosted image (support landed around v1.31x). The previously pinned
+        # v1.207.0 (2024-12) only knows ubuntu-20.04/22.04/24.04, so on
+        # ubuntu-26.04 it assumes a self-hosted runner and refuses to install
+        # Ruby — that is the "detected as self-hosted" build failure.
+        # https://github.com/ruby/setup-ruby/releases/tag/v1.336.0
+        uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
+          ruby-version: '3.3'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
+          cache-version: 1 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -50,14 +56,14 @@ jobs:
           JEKYLL_ENV: production
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
